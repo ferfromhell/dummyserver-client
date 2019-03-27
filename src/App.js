@@ -3,13 +3,28 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: ''
+    };
+  }
+  componentDidMount() {
+    fetch("http://localhost:5000/test")
+    .then(res => res.json())
+    .then( (result => {
+      // console.log(result);
+      this.setState({ text: result.text})
+    }))
+  }
   render() {
+    const {text} = this.state;
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            { text }
           </p>
           <a
             className="App-link"
@@ -19,6 +34,7 @@ class App extends Component {
           >
             Learn React
           </a>
+          
         </header>
       </div>
     );
