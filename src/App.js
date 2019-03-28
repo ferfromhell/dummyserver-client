@@ -16,6 +16,7 @@ class App extends Component {
       // console.log(result);
       this.setState({ text: result.text})
     }))
+    .catch(err => console.log(err))
   }
   render() {
     const {text} = this.state;
