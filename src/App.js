@@ -14,6 +14,7 @@ class App extends Component {
     .then(res => {
       if (!res.ok) { throw res }
       console.log("1st res");
+      console.log(res);
       res.json()
       })
     .then( (result => {
