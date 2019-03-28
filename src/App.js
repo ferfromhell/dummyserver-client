@@ -11,7 +11,10 @@ class App extends Component {
   }
   componentDidMount() {
     fetch("/test")
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) { throw response }
+      res.json()
+      })
     .then( (result => {
       // console.log(result);
       this.setState({ text: result.text})
