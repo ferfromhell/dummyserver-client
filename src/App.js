@@ -13,11 +13,10 @@ class App extends Component {
     fetch("/test")
     .then(res => {
       if (!res.ok) { throw res }
-      console.log('res: ',res);
       res.json()
       })
     .then( (result => {
-      console.log('result: ',result);
+      // console.log(result);
       this.setState({ text: result.text})
     }))
     .catch(err => console.log(err))
