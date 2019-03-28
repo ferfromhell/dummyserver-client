@@ -12,7 +12,7 @@ class App extends Component {
   componentDidMount() {
     fetch("/test")
     .then(res => {
-      if (!res.ok) { throw response }
+      if (!res.ok) { throw res }
       res.json()
       })
     .then( (result => {
