@@ -20,18 +20,18 @@ class App extends Component {
     .then( (result => {
       console.log("2st res");
       console.log(result);
-      this.setState({ text: result.text})
+      this.setState({ servStat: result.text})
     }))
     .catch(err => console.log(err))
   }
   render() {
-    const {text} = this.state;
+    const {servStat} = this.state;
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            { text }
+            { servStat }
           </p>
           <a
             className="App-link"
