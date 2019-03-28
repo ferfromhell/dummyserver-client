@@ -11,7 +11,7 @@ RUN npm run build
 # # # Stage 2 ngnix proxy configuration
 FROM nginx:alpine
 COPY --from=build-stage /app/build/ /usr/share/nginx/html
-COPY ngnix.conf /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 5001
 CMD ["nginx", "-g", "daemon off;"]
 
